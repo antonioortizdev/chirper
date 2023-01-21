@@ -3,6 +3,14 @@
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
+      "env": [
+        "MYSQL_HOST",
+        "MYSQL_PORT",
+        "MYSQL_USER",
+        "MYSQL_PASS",
+        "MYSQL_DATABASE",
+        "APP_ENV"
+      ],
       "outputs": ["dist/**", ".next/**"]
     },
     "lint": {
