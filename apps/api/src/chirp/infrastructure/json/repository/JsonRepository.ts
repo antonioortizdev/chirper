@@ -15,7 +15,7 @@ export class JsonRepository implements Repository<Chirp> {
 
   async find(filters?): Promise<Chirp[]> {
     const foundChirps = filters
-      ? this.database.chirps.filter((chirp) => {
+      ? this.database.chirps.filter(chirp => {
           const { id } = filters
           if (id) return chirp.id === id
           return false
