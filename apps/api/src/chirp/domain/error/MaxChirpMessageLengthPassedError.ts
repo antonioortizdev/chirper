@@ -1,10 +1,10 @@
 import { InvalidArgumentError } from '../../../shared/domain/error/InvalidArgumentError'
-import { MAX_CHIRP_MESSAGE_LIMIT } from '../value-object/ChirpMessage'
+import { ChirpMessage } from '../value-object/ChirpMessage'
 
 export class MaxChirpMessageLengthPassedError extends InvalidArgumentError {
-  constructor(textLength: number) {
+  constructor(value: string) {
     super(
-      `The chirp with length of ${textLength} characters exceeds the limit of ${MAX_CHIRP_MESSAGE_LIMIT} characters.`
+      `The chirp <${value}> with length of ${value.length} characters exceeds the limit of ${ChirpMessage.CHARACTER_LIMIT} characters.`
     )
   }
 }

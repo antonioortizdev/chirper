@@ -16,14 +16,13 @@ describe('CreateChirp', () => {
   })
 
   it('should throw an error when the chirp already exists', async () => {
-    ;(repository.find as jest.Mock).mockResolvedValue([{ id: '1' }])
-    await expect(createChirp.run({ id: '1' })).rejects.toThrowError(
-      ChirpAlreadyExistsError
-    )
+    (repository.find as jest.Mock).mockResolvedValue([new Chirp()])
+    expect(repository.find).toHaveBeenCalledWith({id: '1'})
+    await expect(createChirp.run({id:'1'})).rejects.toThrowError(ChirpAlreadyExistsError)
   })
 
   it('should save the chirp when it does not exist', async () => {
-    ;(repository.find as jest.Mock).mockResolvedValue([])
+    (repository.find as jest.Mock).mockResolvedValue([])
     const chirp = { id: '1' }
     await createChirp.run(chirp)
     expect(repository.save).toHaveBeenCalledWith(chirp)

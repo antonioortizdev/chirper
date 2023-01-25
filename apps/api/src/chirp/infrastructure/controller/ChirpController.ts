@@ -3,13 +3,11 @@ import {
   Body,
   Controller,
   Get,
+  HttpStatus,
   InternalServerErrorException,
   Post,
 } from '@nestjs/common'
-import { Chirp } from '../../domain/Chirp'
-import { ChirpDto } from '../dto/ChirpDto'
-import { ChirpId } from '../../domain/value-object/ChirpId'
-import { ChirpMessage } from '../../domain/value-object/ChirpMessage'
+import { ChirpDto } from '../../application/dto/ChirpDto'
 import { CreateChirp } from '../../application/use-case/CreateChirp'
 import { FindAllChirps } from '../../application/use-case/FindAllChirps'
 import { InvalidArgumentError } from '../../../shared/domain/error/InvalidArgumentError'
@@ -18,24 +16,21 @@ import { InvalidArgumentError } from '../../../shared/domain/error/InvalidArgume
 export class ChirpController {
   constructor(
     private findAllChirpsUseCase: FindAllChirps,
-    private createChirpUseCase: CreateChirp
+    private createChirpUseCase: CreateChirp,
   ) {}
 
   @Get()
   async findAll() {
-    return this.findAllChirpsUseCase.run()
+    const data = await this.findAllChirpsUseCase.run()
+    return { statusCode: HttpStatus.OK, data }
   }
 
   @Post()
   async create(@Body() chirpDto: ChirpDto) {
     try {
-      const { id, message } = chirpDto
-      const savedChirp = await this.createChirpUseCase.run(
-        new Chirp(new ChirpId(id), new ChirpMessage(message))
-      )
-      return savedChirp.toPrimitives()
+      await this.createChirpUseCase.run(chirpDto)
+      return { statusCode: HttpStatus.NO_CONTENT }
     } catch (error) {
-      console.log(error)
       if (error instanceof InvalidArgumentError)
         throw new BadRequestException(error.message)
       throw new InternalServerErrorException(error.message)

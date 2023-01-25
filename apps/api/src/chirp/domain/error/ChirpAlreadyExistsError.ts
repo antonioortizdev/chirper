@@ -1,8 +1,8 @@
-import { Chirp } from '../Chirp'
+import { ChirpId } from './../value-object/ChirpId'
 import { InvalidArgumentError } from '../../../shared/domain/error/InvalidArgumentError'
 
 export class ChirpAlreadyExistsError extends InvalidArgumentError {
-  constructor(chirpThatExists: Chirp) {
-    super(`Chirp with ID <${chirpThatExists.id}> does exist already.`)
+  constructor(id: ChirpId) {
+    super(`Chirp with ID <${String(id)}> does exist already.`)
   }
 }

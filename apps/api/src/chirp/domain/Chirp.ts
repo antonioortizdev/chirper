@@ -16,19 +16,11 @@ export class Chirp implements Entity {
     public message: ChirpMessage
   ) {}
 
-  toPrimitives(): ChirpData {
+  toPrimitives() {
     return {
       id: String(this.id),
       author: String(this.author),
       message: String(this.message),
     }
-  }
-
-  static fromPrimitives({ id, author, message }: ChirpData): Chirp {
-    return new Chirp(
-      new ChirpId(id),
-      new UserId(author),
-      new ChirpMessage(message)
-    )
   }
 }
