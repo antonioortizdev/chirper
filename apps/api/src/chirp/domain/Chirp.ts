@@ -3,12 +3,6 @@ import { ChirpMessage } from './value-object/ChirpMessage'
 import { Entity } from '../../shared/domain/entity/interface/Entity'
 import { UserId } from '../../user/domain/value-object/UserId'
 
-export interface ChirpData {
-  id: string
-  author: string
-  message: string
-}
-
 export class Chirp implements Entity {
   constructor(
     public id: ChirpId,
