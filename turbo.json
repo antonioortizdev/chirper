@@ -9,7 +9,8 @@
         "MYSQL_USER",
         "MYSQL_PASS",
         "MYSQL_DATABASE",
-        "APP_ENV"
+        "APP_ENV",
+        "API_PORT"
       ],
       "outputs": ["dist/**", ".next/**"]
     },
