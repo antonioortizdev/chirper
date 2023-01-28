@@ -1,8 +1,6 @@
 import { readFileSync as readJson, writeFileSync as writeJson } from 'fs'
-import { Injectable } from '@nestjs/common/decorators/core'
 import { Entity } from '../../../../domain/entity/interface/Entity'
 
-@Injectable()
 export class JsonRepository<T extends Entity> {
   private readonly databaseFilePath: string =
     'src/shared/infrastructure/persistence/json/file/db.json'
@@ -15,9 +13,11 @@ export class JsonRepository<T extends Entity> {
   async search(key: string, filters?: any): Promise<any[]> {
     if (filters) {
       return this.database[key].filter(entity => {
-        return Object.keys(filters).reduce((matchesCriteria, key) =>
-          matchesCriteria && filters[key] === entity[key]
-        , false)
+        return Object.keys(filters).reduce(
+          (matchesCriteria, key) =>
+            matchesCriteria && filters[key] === entity[key],
+          false
+        )
       })
     }
     return this.database[key]
