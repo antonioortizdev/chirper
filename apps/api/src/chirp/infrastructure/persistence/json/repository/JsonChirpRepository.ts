@@ -4,7 +4,10 @@ import { Repository } from '../../../../../shared/domain/repository/interface/Re
 import { JsonRepository } from '../../../../../shared/infrastructure/persistence/json/repository/JsonRepository'
 
 @Injectable()
-export class JsonChirpRepository extends JsonRepository<Chirp> implements Repository<Chirp> {
+export class JsonChirpRepository
+  extends JsonRepository<Chirp>
+  implements Repository<Chirp>
+{
   async find(filters?): Promise<Chirp[]> {
     const foundChirps = await this.search('chirps', filters)
 
