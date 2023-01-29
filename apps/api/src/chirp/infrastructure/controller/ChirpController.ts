@@ -12,17 +12,21 @@ import { CreateChirp } from '../../application/use-case/CreateChirp'
 import { FindAllChirps } from '../../application/use-case/FindAllChirps'
 import { InvalidArgumentError } from '../../../shared/domain/error/InvalidArgumentError'
 
-@Controller('chirp')
+@Controller('chirps')
 export class ChirpController {
   constructor(
     private findAllChirpsUseCase: FindAllChirps,
-    private createChirpUseCase: CreateChirp,
+    private createChirpUseCase: CreateChirp
   ) {}
 
   @Get()
   async findAll() {
-    const data = await this.findAllChirpsUseCase.run()
-    return { statusCode: HttpStatus.OK, data }
+    try {
+      const data = await this.findAllChirpsUseCase.run()
+      return { statusCode: HttpStatus.OK, data }
+    } catch (error) {
+      throw new InternalServerErrorException(error.message)
+    }
   }
 
   @Post()
