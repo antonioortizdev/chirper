@@ -3,16 +3,19 @@ import {
   Body,
   Controller,
   Get,
+  HttpCode,
   HttpStatus,
   InternalServerErrorException,
   Post,
+  Response,
 } from '@nestjs/common'
 import { ChirpDto } from '../../application/dto/ChirpDto'
 import { CreateChirp } from '../../application/use-case/CreateChirp'
 import { FindAllChirps } from '../../application/use-case/FindAllChirps'
 import { InvalidArgumentError } from '../../../shared/domain/error/InvalidArgumentError'
 
-@Controller('chirps')
+const ROUTE_PREFIX = 'chirps'
+@Controller(ROUTE_PREFIX)
 export class ChirpController {
   constructor(
     private findAllChirpsUseCase: FindAllChirps,
@@ -30,10 +33,11 @@ export class ChirpController {
   }
 
   @Post()
-  async create(@Body() chirpDto: ChirpDto) {
+  @HttpCode(HttpStatus.CREATED)
+  async create(@Body() chirpDto: ChirpDto, @Response() response) {
     try {
       await this.createChirpUseCase.run(chirpDto)
-      return { statusCode: HttpStatus.NO_CONTENT }
+      response.header('Location', `/${ROUTE_PREFIX}/${chirpDto.id}`)
     } catch (error) {
       if (error instanceof InvalidArgumentError)
         throw new BadRequestException(error.message)
