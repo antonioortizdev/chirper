@@ -1,16 +1,20 @@
-# Turborepo starter
+# Chirper Repository
 
-This is an official npm starter turborepo.
+This is the main repository of all Chirper apps. This respository is based in [Turborepo](https://turbo.build/)
+
+## What's Chirper?
+
+Chirper is a Twitter clone. Is [open source](https://en.wikipedia.org/wiki/Open-source_software), and is being developing using Test-Driven Development, Domain-Driven Development & Hexagonal Architecture 
 
 ## What's inside?
 
-This turborepo uses [npm](https://www.npmjs.com/) as a package manager. It includes the following packages/apps:
+This repository uses [npm](https://www.npmjs.com/) as a package manager. It includes the following packages/apps:
 
 ### Apps and Packages
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
+- `api`: a [NestJS](https://nestjs.com/) app
+- `web`: a [Next.js](https://nextjs.org/) app
+- `ui`: a stub React component library used by `web` application
 - `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
 - `tsconfig`: `tsconfig.json`s used throughout the monorepo
 
@@ -18,7 +22,7 @@ Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 
 ### Utilities
 
-This turborepo has some additional tools already setup for you:
+This repository has some additional tools already setup for you:
 
 - [TypeScript](https://www.typescriptlang.org/) for static type checking
 - [ESLint](https://eslint.org/) for code linting
@@ -29,7 +33,7 @@ This turborepo has some additional tools already setup for you:
 To build all apps and packages, run the following command:
 
 ```
-cd my-turborepo
+cd ./chirper
 npm run build
 ```
 
@@ -49,7 +53,7 @@ Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo
 By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
 
 ```
-cd my-turborepo
+cd ./chirper
 npx turbo login
 ```
 
