@@ -4,7 +4,7 @@ This is the main repository of all Chirper apps. This respository is based in [T
 
 ## What's Chirper?
 
-Chirper is a Twitter clone. Is [open source](https://en.wikipedia.org/wiki/Open-source_software), and is being developing using Test-Driven Development, Domain-Driven Development & Hexagonal Architecture 
+Chirper is a Twitter clone. Is [Open Source](https://en.wikipedia.org/wiki/Open-source_software), and is being developed using [Test-Driven Development](https://en.wikipedia.org/wiki/Test-driven_development), [Domain-Driven Design](https://en.wikipedia.org/wiki/Domain-driven_design) & [Hexagonal Architecture](https://en.wikipedia.org/wiki/Hexagonal_architecture_(software)) 
 
 ## What's inside?
 
@@ -14,7 +14,7 @@ This repository uses [npm](https://www.npmjs.com/) as a package manager. It incl
 
 - `api`: a [NestJS](https://nestjs.com/) app
 - `web`: a [Next.js](https://nextjs.org/) app
-- `ui`: a stub React component library used by `web` application
+- `ui`: a stub [React](https://reactjs.org/) component library used by `web` application
 - `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
 - `tsconfig`: `tsconfig.json`s used throughout the monorepo
 
