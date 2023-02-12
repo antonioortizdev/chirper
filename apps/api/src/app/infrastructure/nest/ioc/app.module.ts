@@ -1,4 +1,4 @@
-import { ChirpModule } from '../../../../chirp/infrastructure/ioc/ChirpModule'
+import { ChirpModule } from '../../../../chirp/infrastructure/nest/module/ChirpModule'
 import { Module } from '@nestjs/common'
 import { config as dotenvConfig } from 'dotenv'
 
