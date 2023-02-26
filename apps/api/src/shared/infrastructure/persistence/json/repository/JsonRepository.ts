@@ -16,7 +16,7 @@ export class JsonRepository<T extends Entity> {
         return Object.keys(filters).reduce(
           (matchesCriteria, key) =>
             matchesCriteria && filters[key] === entity[key],
-          false
+          false,
         )
       })
     }

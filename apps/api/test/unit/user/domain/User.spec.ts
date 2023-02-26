@@ -8,7 +8,7 @@ describe('User', () => {
   beforeEach(() => {
     user = new User(
       new UserId('c6e79858-a309-4ea6-9371-e6ccc4497fff'),
-      new UserEmail('antonio@gmail.com')
+      new UserEmail('antonio@gmail.com'),
     )
   })
 

@@ -7,7 +7,7 @@ export class Chirp implements Entity {
   constructor(
     public id: ChirpId,
     public author: UserId,
-    public message: ChirpMessage
+    public message: ChirpMessage,
   ) {}
 
   toPrimitives() {

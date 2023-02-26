@@ -12,7 +12,7 @@ export class JsonChirpRepository
     const foundChirps = await this.search('chirps', filters)
 
     return foundChirps.map(
-      ({ id, author, message }) => new Chirp(id, author, message)
+      ({ id, author, message }) => new Chirp(id, author, message),
     )
   }
 
