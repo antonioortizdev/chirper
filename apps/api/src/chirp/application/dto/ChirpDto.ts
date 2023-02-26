@@ -8,14 +8,14 @@ export class ChirpDto implements Dto {
   constructor(
     readonly id: string,
     readonly author: string,
-    readonly message: string
+    readonly message: string,
   ) {}
 
   toDomain(): Chirp {
     return new Chirp(
       new ChirpId(this.id),
       new UserId(this.author),
-      new ChirpMessage(this.message)
+      new ChirpMessage(this.message),
     )
   }
 }

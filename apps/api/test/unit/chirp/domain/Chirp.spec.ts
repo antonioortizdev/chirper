@@ -9,7 +9,7 @@ describe('Chirp', () => {
     chirp = new Chirp(
       new ChirpId('c6e79858-a309-4ea6-9371-e6ccc4497fff'),
       new UserId('4ca63255-b896-44ec-baae-7f644a835211'),
-      new ChirpMessage('This is my first chirp.')
+      new ChirpMessage('This is my first chirp.'),
     )
   })
   it('should convert chirp to primitives', () => {

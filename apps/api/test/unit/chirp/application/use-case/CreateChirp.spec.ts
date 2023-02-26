@@ -22,12 +22,12 @@ describe('CreateChirp', () => {
     chirpDto = new ChirpDto(
       '4eb170e2-00fa-41b1-af6b-553c0bbebfa6',
       '78d74ddc-93e1-4f55-bae1-9d9bf8e4236a',
-      'do the laundry'
+      'do the laundry',
     )
     chirp = new Chirp(
       new ChirpId('4eb170e2-00fa-41b1-af6b-553c0bbebfa6'),
       new UserId('78d74ddc-93e1-4f55-bae1-9d9bf8e4236a'),
-      new ChirpMessage('do the laundry')
+      new ChirpMessage('do the laundry'),
     )
     jest.spyOn(chirpDto, 'toDomain').mockReturnValue(chirp)
   })
@@ -35,7 +35,7 @@ describe('CreateChirp', () => {
   it('should throw an error when the chirp already exists', async () => {
     ;(repository.find as jest.Mock).mockResolvedValue([chirp])
     await expect(createChirp.run(chirpDto)).rejects.toThrowError(
-      ChirpAlreadyExistsError
+      ChirpAlreadyExistsError,
     )
     expect(chirpDto.toDomain).toHaveBeenCalledTimes(1)
     expect(repository.find).toHaveBeenCalledWith({
