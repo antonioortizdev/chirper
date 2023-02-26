@@ -1,9 +1,9 @@
-import { ChirpId } from 'src/chirp/domain/value-object/ChirpId'
-import { ChirpMessage } from 'src/chirp/domain/value-object/ChirpMessage'
-import { UserId } from 'src/user/domain/value-object/UserId'
 import { Repository as TypeOrmRepository } from 'typeorm'
 import { Repository } from '../../../../shared/domain/repository/interface/Repository'
+import { UserId } from '../../../../user/domain/value-object/UserId'
 import { Chirp } from '../../../domain/Chirp'
+import { ChirpId } from '../../../domain/value-object/ChirpId'
+import { ChirpMessage } from '../../../domain/value-object/ChirpMessage'
 import { ChirpTypeOrmEntity } from './entity/ChirpTypeOrmEntity'
 
 export class ChirpTypeOrmRepository implements Repository<Chirp> {

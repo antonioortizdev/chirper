@@ -1,5 +1,5 @@
-import { getConfig } from 'src/app/infrastructure/typeorm/config/TypeOrmDataSourceConfig'
 import { DataSource } from 'typeorm'
+import { getConfig } from '../config/TypeOrmDataSourceConfig'
 
 export const typeOrmDataSourceFactory = async () => {
   const dataSource = new DataSource(getConfig())

@@ -1,10 +1,9 @@
-import { CreateChirp } from 'src/chirp/application/use-case/CreateChirp'
-import { FindAllChirps } from 'src/chirp/application/use-case/FindAllChirps'
-import { ChirpTypeOrmRepository } from 'src/chirp/infrastructure/persistence/typeorm/ChirpTypeOrmRepository'
-import { ChirpTypeOrmEntity } from 'src/chirp/infrastructure/persistence/typeorm/entity/ChirpTypeOrmEntity'
-import { DATA_SOURCE } from 'src/shared/domain/constants'
-import { Repository } from 'src/shared/domain/repository/interface/Repository'
-import { DataSource } from 'typeorm'
+import { DataSource, Repository } from 'typeorm'
+import { DATA_SOURCE } from '../../../../shared/domain/constants'
+import { CreateChirp } from '../../../application/use-case/CreateChirp'
+import { FindAllChirps } from '../../../application/use-case/FindAllChirps'
+import { ChirpTypeOrmRepository } from '../../persistence/typeorm/ChirpTypeOrmRepository'
+import { ChirpTypeOrmEntity } from '../../persistence/typeorm/entity/ChirpTypeOrmEntity'
 
 const useCases = [FindAllChirps, CreateChirp]
 const repositories = [
