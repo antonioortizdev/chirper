@@ -24,5 +24,6 @@ module.exports = {
         argsIgnorePattern: '^_',
       },
     ],
+    'import/no-absolute-path': ['error'],
   },
 }
