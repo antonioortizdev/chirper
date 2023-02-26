@@ -9,17 +9,17 @@ import {
   Post,
   Response,
 } from '@nestjs/common'
-import { ChirpDto } from '../../application/dto/ChirpDto'
-import { CreateChirp } from '../../application/use-case/CreateChirp'
-import { FindAllChirps } from '../../application/use-case/FindAllChirps'
-import { InvalidArgumentError } from '../../../shared/domain/error/InvalidArgumentError'
+import { InvalidArgumentError } from 'src/shared/domain/error/InvalidArgumentError'
+import { ChirpDto } from 'src/chirp/application/dto/ChirpDto'
+import { CreateChirp } from 'src/chirp/application/use-case/CreateChirp'
+import { FindAllChirps } from 'src/chirp/application/use-case/FindAllChirps'
 
 const ROUTE_PREFIX = 'chirps'
 @Controller(ROUTE_PREFIX)
 export class ChirpController {
   constructor(
     private findAllChirpsUseCase: FindAllChirps,
-    private createChirpUseCase: CreateChirp
+    private createChirpUseCase: CreateChirp,
   ) {}
 
   @Get()

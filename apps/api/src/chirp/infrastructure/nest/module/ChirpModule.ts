@@ -1,12 +1,10 @@
-import { ChirpController } from '../../controller/ChirpController'
-import { CreateChirp } from '../../../application/use-case/CreateChirp'
-import { FindAllChirps } from '../../../application/use-case/FindAllChirps'
-import { JsonChirpRepository } from '../../persistence/json/repository/JsonChirpRepository'
 import { Module } from '@nestjs/common'
-import { Repository } from '../../../../shared/domain/repository/interface/Repository'
+import { DatabaseModule } from 'src/app/infrastructure/nest/ioc/database.module'
+import { ChirpController } from '../controller/ChirpController'
 import { chirpProviders } from '../provider/ChirpProviders'
 
 @Module({
+  imports: [DatabaseModule],
   controllers: [ChirpController],
   providers: chirpProviders,
 })

@@ -28,12 +28,11 @@
     "dotenv": "^16.0.3",
     "email-validator": "^2.0.4",
     "mongoose": "^6.6.3",
-    "mysql": "^2.18.1",
-    "mysql2": "^2.3.3",
+    "mysql2": "^3.1.2",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0",
-    "typeorm": "^0.3.10",
+    "typeorm": "^0.3.12",
     "uuid-validate": "^0.0.3"
   },
   "devDependencies": {
