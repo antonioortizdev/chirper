@@ -3,10 +3,12 @@ services:
   db:
     image: mysql:8.0.32
     environment:
-      MYSQL_DATABASE: ${MYSQL_DATABASE}
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_DATABASE}
+      MYSQL_DATABASE: ${DATABASE_NAME}
+      MYSQL_ROOT_PASSWORD: ${DATABASE_PASSWORD}
+    ports:
+      - ${DATABASE_PORT}:3306
     volumes:
-      - db-data:/var/lib/mysql
+      - ./mysql:/var/lib/mysql
   api:
     image: node:18.12.1
     volumes:
@@ -27,6 +29,5 @@ services:
     depends_on:
       - api
 volumes:
-  db-data:
   api-data:
   web-data:
