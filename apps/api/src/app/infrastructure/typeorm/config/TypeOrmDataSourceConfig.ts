@@ -12,7 +12,7 @@ export function getConfig() {
     password: process.env.MYSQL_PASSWORD || 'root',
     database: process.env.MYSQL_DATABASE || 'test',
     migrations: [__dirname + '/../migration/*.ts'],
-    entities: ['src/**/*TypeOrmEntity.ts'],
+    entities: [__dirname + '/**/*TypeOrmEntity.{ts|js}'],
     synchronize: true,
   } satisfies DataSourceOptions
 }
