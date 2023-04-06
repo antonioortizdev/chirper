@@ -1,5 +1,5 @@
-import { ChirpMessage } from '../../../../../src/chirp/domain/value-object/ChirpMessage'
-import { MaxChirpMessageLengthPassedError } from '../../../../../src/chirp/domain/error/MaxChirpMessageLengthPassedError'
+import { ChirpMessage } from '../../../../../src/chirp/domain/value-object/chirp-message.value-object'
+import { MaxChirpMessageLengthPassedError } from '../../../../../src/chirp/domain/error/max-chirp-message-length-passed.error'
 
 describe('Chirp Message', () => {
   it('should throw a max chirp message length passed error on instantation', () => {

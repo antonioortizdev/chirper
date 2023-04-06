@@ -1,8 +1,8 @@
-import { UserId } from '../../../user/domain/value-object/UserId'
+import { UserId } from '../../../user/domain/value-object/user-id.value-object'
 import { Chirp } from '../../domain/Chirp'
-import { Dto } from '../../../shared/application/dto/interface/Dto'
-import { ChirpId } from '../../domain/value-object/ChirpId'
-import { ChirpMessage } from '../../domain/value-object/ChirpMessage'
+import { Dto } from '../../../shared/application/dto'
+import { ChirpId } from '../../domain/value-object/chirp-id.value-object'
+import { ChirpMessage } from '../../domain/value-object/chirp-message.value-object'
 
 export class ChirpDto implements Dto {
   constructor(

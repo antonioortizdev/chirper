@@ -1,5 +1,5 @@
 import { readFileSync as readJson, writeFileSync as writeJson } from 'fs'
-import { Entity } from '../../../../domain/entity/interface/Entity'
+import { Entity } from '../../../../domain/entity'
 
 export class JsonRepository<T extends Entity> {
   private readonly databaseFilePath: string =

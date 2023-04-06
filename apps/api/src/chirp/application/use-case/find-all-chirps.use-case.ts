@@ -1,6 +1,6 @@
 import { Inject, Injectable } from '@nestjs/common'
 import { Chirp } from '../../domain/Chirp'
-import { Repository } from '../../../shared/domain/repository/interface/Repository'
+import { Repository } from '../../../shared/domain/repository'
 
 @Injectable()
 export class FindAllChirps {
