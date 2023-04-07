@@ -1,6 +1,7 @@
 version: '3.8'
+name: chirper
 services:
-  db:
+  mysql:
     image: mysql:8.0.32
     environment:
       MYSQL_DATABASE: ${DATABASE_NAME}
@@ -19,7 +20,7 @@ services:
     ports:
       - ${API_PORT}:3000
     depends_on:
-      - db
+      - mysql
   web:
     image: node:18.12.1
     volumes:
