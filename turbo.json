@@ -10,7 +10,9 @@
         "MYSQL_PASSWORD",
         "MYSQL_DATABASE",
         "APP_ENV",
-        "API_PORT"
+        "API_PORT",
+        "NODE_ENV",
+        "MYSQL_TEST_DATABASE"
       ],
       "outputs": ["dist/**", ".next/**"]
     },
