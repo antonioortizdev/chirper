@@ -1,5 +1,5 @@
-import { InvalidArgumentError } from '../../../shared/domain/error/InvalidArgumentError'
-import { ChirpMessage } from '../value-object/ChirpMessage'
+import { InvalidArgumentError } from '../../../shared/domain/error/invalid-argument.error'
+import { ChirpMessage } from '../value-object/chirp-message.value-object'
 
 export class MaxChirpMessageLengthPassedError extends InvalidArgumentError {
   constructor(value: string) {

@@ -1,4 +1,4 @@
-import { MaxChirpMessageLengthPassedError } from '../error/MaxChirpMessageLengthPassedError'
+import { MaxChirpMessageLengthPassedError } from '../error/max-chirp-message-length-passed.error'
 import { StringValueObject } from '../../../shared/domain/value-object/StringValueObject'
 
 export class ChirpMessage extends StringValueObject {

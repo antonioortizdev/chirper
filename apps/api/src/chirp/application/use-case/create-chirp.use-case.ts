@@ -1,9 +1,9 @@
 import { Inject, Injectable } from '@nestjs/common'
-import { ChirpId } from './../../domain/value-object/ChirpId'
-import { ChirpDto } from '../dto/ChirpDto'
+import { ChirpId } from '../../domain/value-object/chirp-id.value-object'
+import { ChirpDto } from '../dto/chirp.dto'
 import { Chirp } from '../../domain/Chirp'
-import { ChirpAlreadyExistsError } from '../../domain/error/ChirpAlreadyExistsError'
-import { Repository } from '../../../shared/domain/repository/interface/Repository'
+import { ChirpAlreadyExistsError } from '../../domain/error/chirp-already-exists.error'
+import { Repository } from '../../../shared/domain/repository'
 
 @Injectable()
 export class CreateChirp {

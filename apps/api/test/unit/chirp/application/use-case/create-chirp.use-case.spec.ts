@@ -1,11 +1,11 @@
 import { Chirp } from '../../../../../src/chirp/domain/Chirp'
-import { ChirpAlreadyExistsError } from '../../../../../src/chirp/domain/error/ChirpAlreadyExistsError'
-import { CreateChirp } from '../../../../../src/chirp/application/use-case/CreateChirp'
-import { Repository } from '../../../../../src/shared/domain/repository/interface/Repository'
-import { ChirpDto } from '../../../../../src/chirp/application/dto/ChirpDto'
-import { ChirpId } from '../../../../../src/chirp/domain/value-object/ChirpId'
-import { UserId } from '../../../../../src/user/domain/value-object/UserId'
-import { ChirpMessage } from '../../../../../src/chirp/domain/value-object/ChirpMessage'
+import { ChirpAlreadyExistsError } from '../../../../../src/chirp/domain/error/chirp-already-exists.error'
+import { CreateChirp } from '../../../../../src/chirp/application/use-case/create-chirp.use-case'
+import { Repository } from '../../../../../src/shared/domain/repository'
+import { ChirpDto } from '../../../../../src/chirp/application/dto/chirp.dto'
+import { ChirpId } from '../../../../../src/chirp/domain/value-object/chirp-id.value-object'
+import { UserId } from '../../../../../src/user/domain/value-object/user-id.value-object'
+import { ChirpMessage } from '../../../../../src/chirp/domain/value-object/chirp-message.value-object'
 
 describe('CreateChirp', () => {
   let createChirp: CreateChirp

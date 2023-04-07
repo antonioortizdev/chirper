@@ -1,4 +1,4 @@
-import { Entity } from '../../entity/interface/Entity'
+import { Entity } from './entity'
 
 export interface Repository<T extends Entity> {
   find(filters?): Promise<T[]>

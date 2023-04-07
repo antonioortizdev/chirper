@@ -1,4 +1,4 @@
-import { InvalidArgumentError } from './InvalidArgumentError'
+import { InvalidArgumentError } from './invalid-argument.error'
 
 export class InvalidEmailError extends InvalidArgumentError {
   constructor(invalidEmail: string) {

@@ -1,7 +1,7 @@
 import { Chirp } from '../../../../domain/Chirp'
 import { Injectable } from '@nestjs/common/decorators/core'
-import { Repository } from '../../../../../shared/domain/repository/interface/Repository'
-import { JsonRepository } from '../../../../../shared/infrastructure/persistence/json/repository/JsonRepository'
+import { Repository } from '../../../../../shared/domain/repository'
+import { JsonRepository } from '../../../../../shared/infrastructure/persistence/json/repository/json.repository'
 
 @Injectable()
 export class JsonChirpRepository

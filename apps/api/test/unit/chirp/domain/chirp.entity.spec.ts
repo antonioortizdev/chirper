@@ -1,7 +1,7 @@
 import { Chirp } from '../../../../src/chirp/domain/Chirp'
-import { ChirpId } from '../../../../src/chirp/domain/value-object/ChirpId'
-import { ChirpMessage } from '../../../../src/chirp/domain/value-object/ChirpMessage'
-import { UserId } from '../../../../src/user/domain/value-object/UserId'
+import { ChirpId } from '../../../../src/chirp/domain/value-object/chirp-id.value-object'
+import { ChirpMessage } from '../../../../src/chirp/domain/value-object/chirp-message.value-object'
+import { UserId } from '../../../../src/user/domain/value-object/user-id.value-object'
 
 describe('Chirp', () => {
   let chirp: Chirp

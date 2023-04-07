@@ -1,6 +1,6 @@
-import { User } from '../../../../src/user/domain/User'
-import { UserEmail } from '../../../../src/user/domain/value-object/UserEmail'
-import { UserId } from '../../../../src/user/domain/value-object/UserId'
+import { User } from '../../../../src/user/domain/user.entity'
+import { UserEmail } from '../../../../src/user/domain/value-object/user-email.value-object'
+import { UserId } from '../../../../src/user/domain/value-object/user-id.value-object'
 
 describe('User', () => {
   let user: User

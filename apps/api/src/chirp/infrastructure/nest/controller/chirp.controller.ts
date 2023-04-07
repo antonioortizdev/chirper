@@ -9,10 +9,10 @@ import {
   Post,
   Response,
 } from '@nestjs/common'
-import { InvalidArgumentError } from '../../../../shared/domain/error/InvalidArgumentError'
-import { ChirpDto } from '../../../application/dto/ChirpDto'
-import { CreateChirp } from '../../../application/use-case/CreateChirp'
-import { FindAllChirps } from '../../../application/use-case/FindAllChirps'
+import { InvalidArgumentError } from '../../../../shared/domain/error/invalid-argument.error'
+import { ChirpDto } from '../../../application/dto/chirp.dto'
+import { CreateChirp } from '../../../application/use-case/create-chirp.use-case'
+import { FindAllChirps } from '../../../application/use-case/find-all-chirps.use-case'
 
 const ROUTE_PREFIX = 'chirps'
 @Controller(ROUTE_PREFIX)
