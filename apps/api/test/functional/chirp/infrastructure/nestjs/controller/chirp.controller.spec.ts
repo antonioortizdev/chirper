@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing'
-import { ChirpController } from '../../../../../../src/chirp/infrastructure/nest/controller/ChirpController'
+import { ChirpController } from '../../../../../../src/chirp/infrastructure/nest/controller/chirp.controller'
 
 // test ChirpController endpoints.
 describe('ChirpController', () => {

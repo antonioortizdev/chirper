@@ -12,7 +12,7 @@ export class CreateChirpsTable1677417323444 implements MigrationInterface {
             isPrimary: true,
           },
           {
-            name: 'author',
+            name: 'author_id',
             type: 'varchar',
           },
           {
