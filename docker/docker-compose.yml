@@ -12,7 +12,6 @@ services:
       - ${MYSQL_PORT}:3306
     volumes:
       - ./mysql/data:/var/lib/mysql
-      - ./mysql/my.cnf:/etc/mysql/conf.d/my.cnf
       - ./mysql/entrypoint.sh:/custom-entrypoint.sh
     entrypoint: /custom-entrypoint.sh
   api:

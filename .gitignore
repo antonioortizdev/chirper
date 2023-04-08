@@ -36,5 +36,5 @@ yarn-error.log*
 .vscode/
 
 # docker
-docker/mysql/
+docker/mysql/data
 docker/.env
