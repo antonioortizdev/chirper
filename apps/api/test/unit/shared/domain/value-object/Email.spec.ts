@@ -1,5 +1,5 @@
 import * as emailValidator from 'email-validator'
-import { Email } from '../../../../../src/shared/domain/value-object/Email'
+import { Email } from '../../../../../src/shared/domain/value-object/email.value-object'
 import { InvalidEmailError } from '../../../../../src/shared/domain/error/invalid-email.error'
 
 jest.mock('email-validator')
