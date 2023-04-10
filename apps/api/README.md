@@ -2,7 +2,7 @@
 
 ## Description
 
-Made with [Nest](https://github.com/nestjs/nest)JS framework.
+Made with [NestJS](https://github.com/nestjs/nest) framework.
 
 ## Installation
 
@@ -21,6 +21,19 @@ npm run start:dev
 
 # production mode
 npm run start:prod
+```
+
+## Making migrations
+
+```bash
+# generate migration
+npm run typeorm migration:create <migration-name>
+
+# run migrations
+npm run migration:run
+
+# revert migrations
+npm run migration:revert
 ```
 
 ## Test

@@ -1,5 +1,5 @@
 import { MaxChirpMessageLengthPassedError } from '../error/max-chirp-message-length-passed.error'
-import { StringValueObject } from '../../../shared/domain/value-object/StringValueObject'
+import { StringValueObject } from '../../../shared/domain/value-object/string.value-object'
 
 export class ChirpMessage extends StringValueObject {
   public static readonly CHARACTER_LIMIT = 280

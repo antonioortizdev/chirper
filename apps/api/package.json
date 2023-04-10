@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "typeorm": "typeorm-ts-node-commonjs",
-    "migration:run": "npm run typeorm migration:run -- -d ./src/app/infrastructure/typeorm/migration/data-source/TypeOrmMigrationDataSource.ts",
-    "migration:revert": "npm run typeorm migration:revert -- -d ./src/app/infrastructure/typeorm/migration/data-source/TypeOrmMigrationDataSource.ts",
+    "migration:run": "npm run typeorm migration:run -- -d ./src/app/infrastructure/typeorm/migration/data-source/typeorm-migration.data-source.ts",
+    "migration:revert": "npm run typeorm migration:revert -- -d ./src/app/infrastructure/typeorm/migration/data-source/typeorm-migration.data-source.ts",
     "dev": "npm run start:dev",
     "prebuild": "rimraf dist",
     "build": "nest build",
@@ -16,10 +16,12 @@
     "start:prod": "node dist/app/infrastructure/nest/main",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "test": "jest",
-    "test:watch": "jest --watch",
+    "test:watch": "NODE_ENV=test jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "test:migration:run": "NODE_ENV=test npm run migration:run",
+    "test:migration:revert": "NODE_ENV=test npm run migration:revert"
   },
   "dependencies": {
     "@nestjs/common": "^9.0.0",

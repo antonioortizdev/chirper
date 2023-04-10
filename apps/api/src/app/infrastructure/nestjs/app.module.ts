@@ -1,8 +1,8 @@
-import { ChirpModule } from '../../../../chirp/infrastructure/nest/module/ChirpModule'
 import { Module } from '@nestjs/common'
-import { config as dotenvConfig } from 'dotenv'
+import { ChirpModule } from '../../../chirp/infrastructure/nestjs/module/chirp.module'
+import { config as dotEnvConfig } from 'dotenv'
 
-dotenvConfig()
+dotEnvConfig()
 
 @Module({
   imports: [ChirpModule],
