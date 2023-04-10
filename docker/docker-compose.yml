@@ -11,16 +11,17 @@ services:
     ports:
       - ${MYSQL_PORT}:3306
     volumes:
-      - ./mysql/data:/var/lib/mysql
+      - mysql-data:/var/lib/mysql
       - ./mysql/entrypoint.sh:/custom-entrypoint.sh
     entrypoint: /custom-entrypoint.sh
   api:
     image: node:18.12.1
+    build:
+      dockerfile: ./api/Dockerfile
     volumes:
-      - api-data:/usr/src/app
+      - ${API_PATH}:/usr/src/app
     environment:
       - NODE_ENV=development
-    command: npm run start:dev
     ports:
       - ${API_PORT}:3000
     depends_on:
@@ -34,5 +35,5 @@ services:
     depends_on:
       - api
 volumes:
-  api-data:
+  mysql-data:
   web-data:

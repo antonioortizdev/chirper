@@ -1,7 +1,7 @@
 import { DataSourceOptions } from 'typeorm'
-import { config as dotenvConfig } from 'dotenv'
+import { config as dotEnvConfig } from 'dotenv'
 
-dotenvConfig()
+dotEnvConfig()
 
 export function getConfig(): DataSourceOptions {
   const isTestEnvironment = process.env.NODE_ENV === 'test'
@@ -19,5 +19,5 @@ export function getConfig(): DataSourceOptions {
     migrations: [__dirname + '/../migration/*.ts'],
     entities: [__dirname + '/**/*TypeOrmEntity.{ts|js}'],
     synchronize: true,
-  } satisfies DataSourceOptions
+  }
 }
