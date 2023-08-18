@@ -1,13 +1,13 @@
-import { Column, Entity, PrimaryColumn } from "typeorm"
+import { Column, Entity, PrimaryColumn } from 'typeorm';
 
 @Entity('chirps')
 export class ChirpTypeOrmEntity {
-  @PrimaryColumn()
-  id: string
+	@PrimaryColumn()
+		id: string;
 
-  @Column()
-  author: string
+	@Column()
+		author: string;
 
-  @Column()
-  message: string
+	@Column()
+		message: string;
 }

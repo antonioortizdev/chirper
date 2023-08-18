@@ -1,12 +1,12 @@
-import { MaxChirpMessageLengthPassedError } from '../error/max-chirp-message-length-passed.error'
-import { StringValueObject } from '../../../shared/domain/value-object/StringValueObject'
+import { MaxChirpMessageLengthPassedError } from '../error/max-chirp-message-length-passed.error';
+import { StringValueObject } from '../../../shared/domain/value-object/StringValueObject';
 
 export class ChirpMessage extends StringValueObject {
-  public static readonly CHARACTER_LIMIT = 280
-  constructor(value: string) {
-    if (value.length > ChirpMessage.CHARACTER_LIMIT)
-      throw new MaxChirpMessageLengthPassedError(value)
+	public static readonly CHARACTER_LIMIT = 280;
+	constructor(value: string) {
+		if (value.length > ChirpMessage.CHARACTER_LIMIT)
+			throw new MaxChirpMessageLengthPassedError(value);
 
-    super(value)
-  }
+		super(value);
+	}
 }

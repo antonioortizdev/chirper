@@ -1,4 +1,4 @@
-import { Entity } from '../domain/entity'
+import { Entity } from '../domain/entity';
 export interface Dto {
-  toDomain(): Entity
+	toDomain(): Entity;
 }

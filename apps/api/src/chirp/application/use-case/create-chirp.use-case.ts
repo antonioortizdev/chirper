@@ -1,24 +1,24 @@
-import { Inject, Injectable } from '@nestjs/common'
-import { ChirpId } from '../../domain/value-object/chirp-id.value-object'
-import { ChirpDto } from '../dto/chirp.dto'
-import { Chirp } from '../../domain/Chirp'
-import { ChirpAlreadyExistsError } from '../../domain/error/chirp-already-exists.error'
-import { Repository } from '../../../shared/domain/repository'
+import { Inject, Injectable } from '@nestjs/common';
+import { ChirpId } from '../../domain/value-object/chirp-id.value-object';
+import { ChirpDto } from '../dto/chirp.dto';
+import { Chirp } from '../../domain/Chirp';
+import { ChirpAlreadyExistsError } from '../../domain/error/chirp-already-exists.error';
+import { Repository } from '../../../shared/domain/repository';
 
 @Injectable()
 export class CreateChirp {
-  constructor(@Inject(Repository) private repository: Repository<Chirp>) {}
+	constructor(@Inject(Repository) private repository: Repository<Chirp>) {}
 
-  async run(chirpDto: ChirpDto): Promise<void> {
-    const chirp = chirpDto.toDomain()
-    await this.ensureChirpDoesNotExist(chirp.id)
-    this.repository.save(chirp)
-  }
+	async run(chirpDto: ChirpDto): Promise<void> {
+		const chirp = chirpDto.toDomain();
+		await this.ensureChirpDoesNotExist(chirp.id);
+		this.repository.save(chirp);
+	}
 
-  private async ensureChirpDoesNotExist(id: ChirpId): Promise<void> {
-    const foundChirps = await this.repository.find({ id: String(id) })
-    if (foundChirps.length) {
-      throw new ChirpAlreadyExistsError(id)
-    }
-  }
+	private async ensureChirpDoesNotExist(id: ChirpId): Promise<void> {
+		const foundChirps = await this.repository.find({ id: String(id) });
+		if (foundChirps.length) {
+			throw new ChirpAlreadyExistsError(id);
+		}
+	}
 }

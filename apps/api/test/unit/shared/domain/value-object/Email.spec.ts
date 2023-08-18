@@ -1,40 +1,40 @@
-import * as emailValidator from 'email-validator'
-import { Email } from '../../../../../src/shared/domain/value-object/Email'
-import { InvalidEmailError } from '../../../../../src/shared/domain/error/invalid-email.error'
+import * as emailValidator from 'email-validator';
+import { Email } from '../../../../../src/shared/domain/value-object/Email';
+import { InvalidEmailError } from '../../../../../src/shared/domain/error/invalid-email.error';
 
-jest.mock('email-validator')
+jest.mock('email-validator');
 
 describe('Email value object', () => {
-  let emailValidateSpy: jest.Mock
+	let emailValidateSpy: jest.Mock;
 
-  beforeAll(() => {
-    emailValidateSpy = emailValidator.validate as jest.Mock
-  })
+	beforeAll(() => {
+		emailValidateSpy = emailValidator.validate as jest.Mock;
+	});
 
-  it('should instantiate email value object', () => {
-    emailValidateSpy.mockReturnValue(true)
+	it('should instantiate email value object', () => {
+		emailValidateSpy.mockReturnValue(true);
 
-    const emailValue = 'antonio@hotmail.com'
+		const emailValue = 'antonio@hotmail.com';
 
-    expect(new Email(emailValue).value).toBe(emailValue)
-    expect(emailValidateSpy).toBeCalledWith(emailValue)
-  })
+		expect(new Email(emailValue).value).toBe(emailValue);
+		expect(emailValidateSpy).toBeCalledWith(emailValue);
+	});
 
-  it('should throw invalid email error on instantation', () => {
-    emailValidateSpy.mockReturnValue(false)
+	it('should throw invalid email error on instantation', () => {
+		emailValidateSpy.mockReturnValue(false);
 
-    const notAValidEmail = 'asdf'
+		const notAValidEmail = 'asdf';
 
-    expect(() => new Email(notAValidEmail)).toThrow(InvalidEmailError)
-    expect(emailValidateSpy).toBeCalledWith(notAValidEmail)
-  })
+		expect(() => new Email(notAValidEmail)).toThrow(InvalidEmailError);
+		expect(emailValidateSpy).toBeCalledWith(notAValidEmail);
+	});
 
-  it('should return its value as a string', () => {
-    emailValidateSpy.mockReturnValue(true)
+	it('should return its value as a string', () => {
+		emailValidateSpy.mockReturnValue(true);
 
-    const emailValue = 'antonio@hotmail.com'
-    const email = new Email(emailValue)
+		const emailValue = 'antonio@hotmail.com';
+		const email = new Email(emailValue);
 
-    expect(String(email)).toBe(emailValue)
-  })
-})
+		expect(String(email)).toBe(emailValue);
+	});
+});

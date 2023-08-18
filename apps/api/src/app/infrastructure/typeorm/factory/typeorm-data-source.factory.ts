@@ -1,8 +1,8 @@
-import { DataSource } from 'typeorm'
-import { getConfig } from '../config/typeorm.config'
+import { DataSource } from 'typeorm';
+import { getConfig } from '../config/typeorm.config';
 
 export const typeOrmDataSourceFactory = async () => {
-  const dataSource = new DataSource(getConfig())
+	const dataSource = new DataSource(getConfig());
 
-  return dataSource.initialize()
-}
+	return dataSource.initialize();
+};

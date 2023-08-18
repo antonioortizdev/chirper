@@ -1,12 +1,12 @@
-import { Inject, Injectable } from '@nestjs/common'
-import { Chirp } from '../../domain/Chirp'
-import { Repository } from '../../../shared/domain/repository'
+import { Inject, Injectable } from '@nestjs/common';
+import { Chirp } from '../../domain/Chirp';
+import { Repository } from '../../../shared/domain/repository';
 
 @Injectable()
 export class FindAllChirps {
-  constructor(@Inject(Repository) private repository: Repository<Chirp>) {}
+	constructor(@Inject(Repository) private repository: Repository<Chirp>) {}
 
-  async run(): Promise<Chirp[]> {
-    return this.repository.find()
-  }
+	async run(): Promise<Chirp[]> {
+		return this.repository.find();
+	}
 }
