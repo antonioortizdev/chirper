@@ -1,4 +1,4 @@
-import { InvalidArgumentError } from '../../../shared/domain/error/invalid-argument.error';
+import { InvalidArgumentError } from '../../../shared/domain/errors/invalid-argument.error';
 
 export class ChirpAlreadyExistsError extends InvalidArgumentError {
 	constructor(id: string) {

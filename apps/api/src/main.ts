@@ -1,9 +1,9 @@
 import 'reflect-metadata';
 import { AppModule } from './app/infrastructure/nest-js/app.module';
 import { NestFactory } from '@nestjs/core';
-import { config as dotenvConfig } from 'dotenv';
+import { config as dotEnvConfig } from 'dotenv';
 
-dotenvConfig();
+dotEnvConfig();
 
 const bootstrap = async () => {
 	const port = process.env.API_PORT || 3000;
@@ -11,7 +11,7 @@ const bootstrap = async () => {
 	await app.listen(port);
 
 	// eslint-disable-next-line no-console
-	console.log(`🚀 Server listening to http://localhost:${port}`);
+	console.log(`🚀 Chirper API server listening to http://localhost:${port}`);
 };
 
 bootstrap();

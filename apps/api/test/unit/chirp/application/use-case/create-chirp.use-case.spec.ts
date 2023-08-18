@@ -1,8 +1,8 @@
 import { Chirp } from '../../../../../src/chirp/domain/chirp.aggregate';
-import { ChirpAlreadyExistsError } from '../../../../../src/chirp/domain/error/chirp-already-exists.error';
-import { CreateChirp } from '../../../../../src/chirp/application/use-case/create-chirp.use-case';
+import { ChirpAlreadyExistsError } from '../../../../../src/chirp/domain/errors/chirp-already-exists.error';
+import { CreateChirp } from '../../../../../src/chirp/application/use-cases/create-chirp.use-case';
 import { Repository } from '../../../../../src/shared/domain/repository';
-import { CreateChirpDTO } from '../../../../../src/chirp/application/dto/create-chirp.dto';
+import { CreateChirpDTO } from '../../../../../src/chirp/application/dtos/create-chirp.dto';
 
 describe('CreateChirp', () => {
 	let createChirp: CreateChirp;

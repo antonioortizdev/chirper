@@ -9,10 +9,10 @@ import {
 	Post,
 	Response,
 } from '@nestjs/common';
-import { InvalidArgumentError } from '../../../../shared/domain/error/invalid-argument.error';
-import { ChirpDto } from '../../../application/dto/create-chirp.dto';
-import { CreateChirp } from '../../../application/use-case/create-chirp.use-case';
-import { FindAllChirps } from '../../../application/use-case/find-all-chirps.use-case';
+import { InvalidArgumentError } from '../../../shared/domain/errors/invalid-argument.error';
+import { CreateChirpDTO } from '../../application/dtos/create-chirp.dto';
+import { CreateChirp } from '../../application/use-cases/create-chirp.use-case';
+import { FindAllChirps } from '../../application/use-cases/find-all-chirps.use-case';
 
 const ROUTE_PREFIX = 'chirps';
 @Controller(ROUTE_PREFIX)
@@ -34,7 +34,7 @@ export class ChirpController {
 
 	@Post()
 	@HttpCode(HttpStatus.CREATED)
-	async create(@Body() chirpDto: ChirpDto, @Response() response) {
+	async create(@Body() chirpDto: CreateChirpDTO, @Response() response) {
 		try {
 			await this.createChirpUseCase.run(chirpDto);
 			response.header('Location', `/${ROUTE_PREFIX}/${chirpDto.id}`);

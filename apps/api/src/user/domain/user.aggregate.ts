@@ -1,5 +1,5 @@
-import { UserEmail } from './value-object/user-email.value-object';
-import { UserId } from './value-object/user-id.value-object';
+import { UserEmail } from './value-objects/user-email.value-object';
+import { UserId } from './value-objects/user-id.value-object';
 
 export class User {
 	private readonly id: UserId;

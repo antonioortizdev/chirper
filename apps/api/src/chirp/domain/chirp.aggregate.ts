@@ -1,6 +1,6 @@
-import { ChirpId } from './value-object/chirp-id.value-object';
-import { ChirpMessage } from './value-object/chirp-message.value-object';
-import { UserId } from '../../user/domain/value-object/user-id.value-object';
+import { ChirpId } from './value-objects/chirp-id.value-object';
+import { ChirpMessage } from './value-objects/chirp-message.value-object';
+import { UserId } from '../../user/domain/value-objects/user-id.value-object';
 
 export class Chirp {
 	private readonly id: ChirpId;

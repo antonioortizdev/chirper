@@ -1,4 +1,4 @@
-import { InvalidEmailError } from '../error/invalid-email.error';
+import { InvalidEmailError } from '../errors/invalid-email.error';
 import { validate } from 'email-validator';
 
 export class Email {

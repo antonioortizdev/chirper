@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { CreateChirpDTO } from '../dto/create-chirp.dto';
+import { CreateChirpDTO } from '../dtos/create-chirp.dto';
 import { Chirp } from '../../domain/chirp.aggregate';
-import { ChirpAlreadyExistsError } from '../../domain/error/chirp-already-exists.error';
+import { ChirpAlreadyExistsError } from '../../domain/errors/chirp-already-exists.error';
 import { Repository } from '../../../shared/domain/repository';
 
 @Injectable()
