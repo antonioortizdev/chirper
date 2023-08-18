@@ -1,5 +1,5 @@
 import 'reflect-metadata';
-import { AppModule } from './app/infrastructure/nestjs/app.module';
+import { AppModule } from './app/infrastructure/nest-js/app.module';
 import { NestFactory } from '@nestjs/core';
 import { config as dotenvConfig } from 'dotenv';
 

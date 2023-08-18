@@ -1,4 +1,4 @@
-import { Chirp } from '../../../../domain/Chirp';
+import { Chirp } from '../../../../domain/chirp.aggregate';
 import { Injectable } from '@nestjs/common/decorators/core';
 import { Repository } from '../../../../../shared/domain/repository';
 import { JsonRepository } from '../../../../../shared/infrastructure/persistence/json/repository/json.repository';

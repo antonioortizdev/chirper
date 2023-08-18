@@ -1,7 +1,7 @@
 import { Repository as TypeOrmRepository } from 'typeorm';
 import { Repository } from '../../../../../shared/domain/repository';
 import { UserId } from '../../../../../user/domain/value-object/user-id.value-object';
-import { Chirp } from '../../../../domain/Chirp';
+import { Chirp } from '../../../../domain/chirp.aggregate';
 import { ChirpId } from '../../../../domain/value-object/chirp-id.value-object';
 import { ChirpMessage } from '../../../../domain/value-object/chirp-message.value-object';
 import { ChirpTypeOrmEntity } from '../entity/chirp-type-orm.entity';

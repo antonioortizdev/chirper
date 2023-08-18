@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { Chirp } from '../../domain/Chirp';
+import { Chirp } from '../../domain/chirp.aggregate';
 import { Repository } from '../../../shared/domain/repository';
 
 @Injectable()

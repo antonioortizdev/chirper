@@ -1,6 +1,4 @@
-import { Entity } from './entity';
-
-export interface Repository<T extends Entity> {
+export interface Repository<T> {
 	find(filters?): Promise<T[]>;
 	save(entity: T): Promise<void>;
 }
